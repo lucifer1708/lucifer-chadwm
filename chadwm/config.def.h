@@ -6,10 +6,10 @@
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int default_border = 0;   /* to switch back to default border after dynamic border resizing via keybinds */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappih    = 2;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 2;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 2;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 2;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 4;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 4;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 4;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 4;       /* vert outer gap between windows and screen edge */
 static const int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -35,11 +35,11 @@ static const char *fonts[]          = {"Iosevka:style:medium:size=12" ,"JetBrain
                                         "Material Design Icons Desktop:size=12" };
 
 // theme
-#include "themes/onedark.h"
+/* #include "themes/onedark.h" */
 //#include "themes/catppuccin.h"
 //#include "themes/nord.h"
 //#include "themes/gruvchad.h"
-//#include "themes/dracula.h"
+#include "themes/dracula.h"
 
 static const char *colors[][3]      = {
     /*                     fg       bg      border */
@@ -103,7 +103,8 @@ static const Rule rules[] = {
      */
     /* class      instance    title       tags mask     iscentered   isfloating   monitor */
     { "Gimp",     NULL,       NULL,       0,            0,           0,           -1 },
-    { "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
+    { "brave",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
+    { "firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
     { "eww",      NULL,       NULL,       0,            0,           1,           -1 },
     { "mintstick", NULL,      NULL,       0,            0,           0,           -1 },
 };
@@ -243,8 +244,8 @@ static Key keys[] = {
     { MODKEY|ShiftMask,                 XK_r,       restart,           {0} },
 
     // hide & restore windows
-    { MODKEY,                           XK_e,       hidewin,        {0} },
-    { MODKEY|ShiftMask,                 XK_e,       restorewin,     {0} },
+    { MODKEY,                           XK_n,       hidewin,        {0} },
+    { MODKEY|ShiftMask,                 XK_n,       restorewin,     {0} },
 
     // qwerty keyboard
 
@@ -308,3 +309,4 @@ static Button buttons[] = {
     { ClkTabNext,           0,              Button1,        movestack,      { .i = +1 } },
     { ClkTabClose,          0,              Button1,        killclient,     {0} },
 };
+
