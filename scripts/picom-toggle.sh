@@ -3,5 +3,5 @@ if pgrep -x "picom" > /dev/null
 then
 	killall picom
 else
-	picom -b --config ~/.config/arco-chadwm/picom/picom.conf
+	picom -b --config ~/.config/chadwm/picom/picom.conf
 fi
