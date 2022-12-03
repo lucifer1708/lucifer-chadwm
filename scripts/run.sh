@@ -1,6 +1,6 @@
 #!/bin/sh
 
-#xrdb merge ~/.Xresources 
+xrdb merge ~/.Xresources 
 #xbacklight -set 10 &
 #xset r rate 200 50 &
 
@@ -21,7 +21,6 @@ function run {
 #autorandr horizontal
 
 run nm-applet
-run "variety"
 run xfce4-power-manager
 run "/usr/lib/xfce4/notifyd/xfce4-notifyd"
 run "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
@@ -30,21 +29,8 @@ run "numlockx on"
 run "volumeicon"
 sxhkd -c ~/.config/chadwm/sxhkd/sxhkdrc &
 #run "nitrogen --restore"
-run "conky -c $HOME/.config/chadwm/conky/system-overview"
 #you can set wallpapers in themes as well
-feh --bg-scale ~/Pictures/wallhaven-k775l1_1920x1080.png
-#feh --randomize --bg-fill /home/erik/Insync/Apps/Wallhaven/*
-#feh --bg-fill ~/.config/chadwm/wallpaper/chadwm.jpg &
-
-#wallpaper for other Arch based systems
-#feh --bg-fill /usr/share/archlinux-tweak-tool/data/wallpaper/wallpaper.png &
-#run applications from startup
-
-#run "insync start"
-#run "spotify"
-#run "ckb-next -b"
-#run "discord"
-#run "telegram-desktop"
+feh --bg-scale --randomize ~/Pictures/walls/
 
 ~/.config/chadwm/scripts/bar.sh &
 while type chadwm >/dev/null; do chadwm && continue || break; done

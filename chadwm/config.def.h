@@ -73,18 +73,10 @@ static char *tags[] = {"", "", "", "", "", "", "", "", "
 //static char *tags[] = {"一", "二", "三", "四", "五", "六", "七", "八", "九"};
 
 static const char* eww[] = { "eww", "open" , "eww", NULL };
-static const char* discord[] = { "discord", "open" , "discord", NULL };
-static const char* telegram[] = { "telegram-desktop", "open" , "telegram-desktop", NULL };
-static const char* mintstick[] = { "mintstick", "-m", "iso", NULL};
-static const char* pavucontrol[] = { "pavucontrol", NULL };
 
 static const Launcher launchers[] = {
     /* command     name to display */
-    { eww,         "襤" },
-    { discord,     "ﱲ" },
-    { telegram,    "" },
-    { mintstick,    "虜" },
-    { pavucontrol,  "墳" },
+    { eww,         "[襤]" },
 };
 
 static const int tagschemes[] = {

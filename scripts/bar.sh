@@ -32,6 +32,7 @@ mem() {
 }
 
 wlan() {
+# run "conky -c $HOME/.config/chadwm/conky/system-overview"
 	case "$(cat /sys/class/net/wl*/operstate 2>/dev/null)" in
 	up) printf "^c$black^ ^b$blue^ 󰤨 ^d^%s" " ^c$blue^Connected" ;;
 	down) printf "^c$black^ ^b$blue^ 󰤭 ^d^%s" " ^c$blue^Disconnected" ;;
@@ -40,7 +41,7 @@ wlan() {
 
 clock() {
 	printf "^c$black^ ^b$darkblue^  "
-	printf "^c$black^^b$blue^ $(date '+%d/%m/%y %H:%M')  "
+	printf "^c$black^^b$blue^ $(date '+%d/%m/%y %r')  "
 }
 
 while true; do
