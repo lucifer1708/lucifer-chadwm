@@ -176,8 +176,8 @@ static Key keys[] = {
      SHCMD("maim --select | xclip -selection clipboard -t image/png")},
 
     //{ MODKEY,                           XK_c,       spawn, SHCMD("rofi -show
-    //drun") }, { MODKEY,                           XK_Return,  spawn,
-    //SHCMD("st")},
+    // drun") }, { MODKEY,                           XK_Return,  spawn,
+    // SHCMD("st")},
 
     // toggle stuff
     {MODKEY, XK_b, togglebar, {0}},
@@ -250,7 +250,7 @@ static Key keys[] = {
 
     // kill dwm
     //{ MODKEY|ControlMask,               XK_q,       spawn, SHCMD("killall
-    //bar.sh dwm") },
+    // bar.sh dwm") },
 
     // kill window
     {MODKEY, XK_q, killclient, {0}},

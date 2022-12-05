@@ -45,8 +45,8 @@ super + KP_Enter
 #################################################################
 
 #File-Manager
-super + shift + Return
-	thunar
+super + F8
+	eww open eww --toggle
 
 #Keyboard dependent
 #File-Manager
@@ -105,6 +105,8 @@ XF86MonBrightnessDown
 #################################################################
 # CTRL + ALT KEYS
 #################################################################
+
+
 
 #Picom Toggle
 ctrl + alt + o
