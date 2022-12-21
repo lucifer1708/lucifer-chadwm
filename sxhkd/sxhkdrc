@@ -27,26 +27,26 @@ super + w
 super + x
     archlinux-logout
 
-#alacritty
+#st
 super + Return
-    alacritty
+    st
 
 #Xkill
 super + Escape
     xkill
 
 #Keyboard dependent
-#alacritty
+#st
 super + KP_Enter
-	alacritty
+	st
 
 #################################################################
 # SUPER + SHIFT KEYS
 #################################################################
 
 #File-Manager
-super + shift + Return
-	thunar
+super + F8
+	eww open eww --toggle
 
 #Keyboard dependent
 #File-Manager
@@ -105,6 +105,7 @@ XF86MonBrightnessDown
 #################################################################
 # CTRL + ALT KEYS
 #################################################################
+
 
 #Picom Toggle
 ctrl + alt + o

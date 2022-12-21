@@ -23,7 +23,7 @@ battery() {
 
 brightness() {
   printf "^c$red^   "
-  printf "^c$red^%.0f\n" $(cat /sys/class/backlight/*/brightness)
+  printf "^c$red^%.0f\n" $(brightnessctl -m | cut -d, -f4 | tr -d %)
 }
 
 mem() {
