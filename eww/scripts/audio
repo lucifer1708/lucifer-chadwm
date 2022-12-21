@@ -1,0 +1,15 @@
+#!/bin/dash
+
+headvol() {
+  amixer sget Master | grep 'Left:' | cut -d\  -f7 | tr -d '[%]'
+}
+
+mastervol() {
+  amixer sget Master | grep 'Left:' | cut -d\  -f7 | tr -d '[%]'
+}
+
+micvol() {
+  amixer sget Capture | grep 'Left:' | cut -d\  -f7 | tr -d '[%]' 
+}
+
+"$@"
