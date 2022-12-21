@@ -39,17 +39,11 @@ static const char *fonts[]          = {"Iosevka:style:medium:size=12" ,"JetBrain
 //#include "themes/catppuccin.h"
 //#include "themes/nord.h"
 //#include "themes/gruvchad.h"
-/* #include "themes/dracula.h" */
-static char normbordercolor[] = "#444444";
-static char normbgcolor[]     = "#222222";
-static char normfgcolor[]     = "#bbbbbb";
-static char selbordercolor[]  = "#005577";
-static char selbgcolor[]      = "#005577";
-static char selfgcolor[]      = "#eeeeee";
+#include "themes/dracula.h"
 
 static const char *colors[][3]      = {
     /*                     fg       bg      border */
-    /* [SchemeNorm]       = { gray3,   black,  gray2 }, */
+    [SchemeNorm]       = { gray3,   black,  gray2 },
     [SchemeSel]        = { gray4,   blue,   blue  },
     [SchemeTitle]      = { white,   black,  black  }, // active window title
     [TabSel]           = { blue,    gray2,  black },
@@ -180,7 +174,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,                 XK_l,       setcfact,       {.f = -0.25} },
     { MODKEY|ShiftMask,                 XK_o,       setcfact,       {.f =  0.00} },
 
-    { MODKEY,                           XK_F5,      xrdb,           {.v = NULL } }
+
     { MODKEY|ShiftMask,                 XK_j,       movestack,      {.i = +1 } },
     { MODKEY|ShiftMask,                 XK_k,       movestack,      {.i = -1 } },
     { MODKEY|ShiftMask,                 XK_Return,  zoom,           {0} },
@@ -307,3 +301,4 @@ static Button buttons[] = {
     { ClkTabNext,           0,              Button1,        movestack,      { .i = +1 } },
     { ClkTabClose,          0,              Button1,        killclient,     {0} },
 };
+
