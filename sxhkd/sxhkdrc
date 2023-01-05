@@ -21,7 +21,12 @@ super + r
 
 #Browser
 super + w
-    brave
+    firefox-esr
+
+
+# telegram-desktop
+super + shift + t
+    telegram-desktop
 
 #archlinux-logout
 super + x
@@ -58,7 +63,7 @@ super + shift + d
 	dmenu_run -i -nb '#191919' -nf '#ffffff' -sb '#bd93f9' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
 #reload sxhkd:
-super + shift + s
+super + shift + ctrl + s
 	pkill -USR1 -x sxhkd
 
 

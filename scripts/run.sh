@@ -28,9 +28,8 @@ picom &
 run "numlockx on"
 run "volumeicon"
 sxhkd -c ~/.config/chadwm/sxhkd/sxhkdrc &
-#run "nitrogen --restore"
 #you can set wallpapers in themes as well
-feh --bg-scale --randomize ~/Pictures/walls/
+feh --bg-scale --randomize ~/Pictures/walls/images/
 
 ~/.config/chadwm/scripts/bar.sh &
 while type chadwm >/dev/null; do chadwm && continue || break; done

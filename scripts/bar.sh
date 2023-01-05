@@ -9,12 +9,17 @@ interval=0
 . ~/.config/chadwm/scripts/bar_themes/dracula
 
 cpu() {
-  cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
-
-  printf "^c$black^ ^b$green^ CPU"
-  printf "^c$white^ ^b$grey^ $cpu_val"
+  # cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
+  cpu_val=$(iostat -c | awk '/^ / {sum=$1+$2+$3+$4+$5} END {print sum"%"}')
+  printf "^c$black^ ^b$green^ CPU%"
+  printf "^c$white^ ^b$grey^ $cpu_val "
 }
 
+temp() {
+  temp_value=$(sensors | awk '/^edge/ {print $2 }' | tr -d +)
+  printf "^c$black^ ^b$green^ TEMP"
+  printf "^c$white^ ^b$grey^ $temp_value"
+}
 
 battery() {
   get_capacity="$(cat /sys/class/power_supply/BAT1/capacity)"
@@ -28,7 +33,7 @@ brightness() {
 
 mem() {
   printf "^c$blue^^b$black^  "
-  printf "^c$blue^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
+  printf "^c$blue^ $(free -h | awk '/^Mem/ { print $3"/"$2 }' | sed s/i//g)"
 }
 
 wlan() {
@@ -44,10 +49,11 @@ clock() {
 	printf "^c$black^^b$blue^ $(date '+%d/%m/%y %r')  "
 }
 
+
 while true; do
 
   [ $interval = 0 ] || [ $(($interval % 3600)) = 0 ] 
   interval=$((interval + 1))
 
-  sleep 2 && xsetroot -name " $(battery) $(brightness) $(cpu) $(mem) $(wlan) $(clock)"
+  sleep 2 && xsetroot -name " $(battery) $(brightness) $(cpu) $(temp) $(mem) $(wlan) $(clock)"
 done

@@ -36,7 +36,7 @@ static const char *fonts[]          = {"Iosevka:style:medium:size=12" ,"JetBrain
 
 // theme
 /* #include "themes/onedark.h" */
-//#include "themes/catppuccin.h"
+/* #include "themes/catppuccin.h" */
 //#include "themes/nord.h"
 //#include "themes/gruvchad.h"
 #include "themes/dracula.h"
@@ -95,8 +95,7 @@ static const Rule rules[] = {
      */
     /* class      instance    title       tags mask     iscentered   isfloating   monitor */
     { "Gimp",     NULL,       NULL,       0,            0,           0,           -1 },
-    { "brave",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
-    { "firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
+    { "firefox",  NULL,       NULL,       0,       0,           0,           -1 },
     { "eww",      NULL,       NULL,       0,            0,           1,           -1 },
     { "mintstick", NULL,      NULL,       0,            0,           0,           -1 },
 };
